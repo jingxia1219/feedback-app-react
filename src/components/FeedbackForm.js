@@ -1,6 +1,35 @@
 import Card from '../shared/Card'
+import {useState} from 'react'
 
-function FeedbackForm(){
+function FeedbackForm(props){
+    const [name,setName] = useState('')
+    const [review,setReview] = useState('')
+    const [btnClass,setBtnClass] = useState('btn')
+    function submitHandler(e){
+        e.target.preventDefault();
+        props.submitReview({name:name,text:review})
+    }
+    function nameHandler(e){
+        setName(e.target.value);
+        if(e.target.value.trim().length>2 && review.trim().length >7){
+            setBtnClass('btn active')
+            console.log('name handler btn',btnClass)
+        } else {
+            setBtnClass('btn')
+        }
+        console.log('name',name)
+    }
+    function reviewHandler(e){
+        setReview(e.target.value)
+        if(e.target.value.trim().length>7 && name.trim().length >2){
+            console.log('review handler btn',btnClass)
+            setBtnClass('btn-active')
+        } else {
+            setBtnClass('btn')
+        }
+        console.log('review',review)
+    }
+    console.log('btn calss name',btnClass)
     return(
         <Card>
             <form>
@@ -10,8 +39,10 @@ function FeedbackForm(){
         
                 </h2>
                 <div className='input-group'>
-                    <input type='text' placeholder='Movie to review...'></input>
-            </div>
+                    <input value={name} onChange={nameHandler}  className='input-name' type='text' placeholder='Movie to review...'></input>
+                    <textarea value={review} onChange={reviewHandler} className='input-review' type='text' placeholder='Start your review here...'></textarea>
+                </div>
+                <button className={btnClass} onClick={submitHandler} type='submit'>Submit</button>
             </form>
         </Card>
     )

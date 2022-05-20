@@ -15,10 +15,15 @@ function App(){
             })
         // }
     }
+    function submitHandler(review){
+        setData( prev =>{
+            prev.push({...review,id: prev.length+1})
+        })
+    }
     return(
         <>
        <Header text='Feedback App' bgColor = 'blue' textColor = 'red'/>
-       <FeedbackStats data={data}/>
+       <FeedbackStats data={data} submitReview={submitHandler}/>
          <div className='container'>
             <FeedbackForm/>
             <FeedbackList data = {data} delete={deleteHandler}/>

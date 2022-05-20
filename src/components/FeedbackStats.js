@@ -8,14 +8,14 @@ function FeedbackStats(props){
     },0)/length;
     return(
         <div className="feedback-stats">
-            <h4>{length} Reviews</h4>
-            <h4>Average Rating: {length && averageRating.toFixed(1).replace(/[.]0$/,'')}</h4>
+            <h4>{length} &nbsp; Reviews</h4>
+            <h4>Average Rating&nbsp; &nbsp;: &nbsp; {length && averageRating.toFixed(1).replace(/[.]0$/,'')}</h4>
         </div>
     )
 }
 
 FeedbackStats.propTypes = {
-    feedback: PropTypes.array.isRequired
+    feedback: PropTypes.array
 }
 
 export default FeedbackStats;
