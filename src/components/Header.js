@@ -1,13 +1,15 @@
-function Header(){
+function Header(props){
+    const headerSyles = {backgroundColor:props.bgColor,color:props.textColor}
     return (
-        <Header>
+        <header style={headerSyles}>
           <div className='container'>
               <h2>
-                  Feedback App
+                  {props.text}
               </h2>
-          </div>  
-        </Header>
+          </div>
+          </header>  
     )
 }
+
 
 export default Header;
