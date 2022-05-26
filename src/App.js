@@ -17,15 +17,16 @@ function App(){
     }
     function submitHandler(review){
         setData( prev =>{
-            prev.push({...review,id: prev.length+1})
+            return prev.concat({...review,id: prev.length+1})
         })
     }
+    console.log('data:',data)
     return(
         <>
        <Header text='Feedback App' bgColor = 'blue' textColor = 'red'/>
-       <FeedbackStats data={data} submitReview={submitHandler}/>
+       <FeedbackStats data={data} />
          <div className='container'>
-            <FeedbackForm/>
+            <FeedbackForm submitReview={submitHandler}/>
             <FeedbackList data = {data} delete={deleteHandler}/>
         </div>
         </>

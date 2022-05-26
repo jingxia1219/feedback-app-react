@@ -6,30 +6,31 @@ function FeedbackForm(props){
     const [review,setReview] = useState('')
     const [btnClass,setBtnClass] = useState('btn')
     function submitHandler(e){
-        e.target.preventDefault();
+        e.preventDefault();
         props.submitReview({name:name,text:review})
+        setName('')
+        setReview('')
     }
     function nameHandler(e){
         setName(e.target.value);
         if(e.target.value.trim().length>2 && review.trim().length >7){
-            setBtnClass('btn active')
-            console.log('name handler btn',btnClass)
-        } else {
-            setBtnClass('btn')
-        }
-        console.log('name',name)
-    }
-    function reviewHandler(e){
-        setReview(e.target.value)
-        if(e.target.value.trim().length>7 && name.trim().length >2){
-            console.log('review handler btn',btnClass)
             setBtnClass('btn-active')
         } else {
             setBtnClass('btn')
         }
-        console.log('review',review)
     }
-    console.log('btn calss name',btnClass)
+    // console.log(btnClass)
+    function reviewHandler(e){
+        setReview(e.target.value)
+        if(e.target.value.trim().length>7 && name.trim().length >2){
+            // console.log('review handler btn',btnClass)
+            setBtnClass('btn-active')
+        } else {
+            setBtnClass('btn')
+        }
+        // console.log('review',review)
+    }
+    // console.log('btn calss name',btnClass)
     return(
         <Card>
             <form>
