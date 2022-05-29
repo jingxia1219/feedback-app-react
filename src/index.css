@@ -139,3 +139,8 @@ button:hover{
 .btn-active{
     background-color: #202142;
 }
+
+.message{
+    /* text-align: center; */
+    color: rgb(134, 131, 131);
+}

@@ -9,11 +9,9 @@ import {useState} from 'react';
 function App(){
     const [data,setData] = useState(FeedbackData);
     function deleteHandler(id){
-        // if(window.confirm('Are you sure you want to delete?')){
             setData( prev=> {
             return prev.filter( el=> el.id !== id)
             })
-        // }
     }
     function submitHandler(review){
         setData( prev =>{
@@ -23,7 +21,7 @@ function App(){
     console.log('data:',data)
     return(
         <>
-       <Header text='Feedback App' bgColor = 'blue' textColor = 'red'/>
+       <Header text='Movie Review App' bgColor = 'blue' textColor = 'red'/>
        <FeedbackStats data={data} />
          <div className='container'>
             <FeedbackForm submitReview={submitHandler}/>
