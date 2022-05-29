@@ -47,9 +47,9 @@ header{
     font-family: 600;
     text-align: center;
 }
-.rating li,.num-display{
+
+.num-display{
     position: relative;
-    background: #f4f4f4;
     width: 50px;
     height: 50px;
     padding: 10px;
@@ -66,7 +66,49 @@ header{
     color: #eee;
 }
 
+.rating-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+    background: #d2d0d1;
+    height: 50px;
+    width: 50px;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
+.rating-icon:hover,
+.rating-icon.true,
+.num-display{
+    border-radius: 50%;
+    background: #ff6a95;
+    color: #fff;
+}
+.rating-icon:hover{
+    border: 1.6px solid rgb(221, 218, 218);
+}
+
+
+.input-group{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    border-radius: 8px;
+}
+.rating {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 30px 0 40px;
+  }
+
+  .input-group input {
+    width: 80%;
+  }
 .card.reverse{
     background-color: rgba(0,0,0,4);
     color: white;
@@ -142,5 +184,11 @@ button:hover{
 
 .message{
     /* text-align: center; */
-    color: rgb(134, 131, 131);
+    color: rgb(124, 33, 124);
 }
+
+.star-rating{
+    display: flex;
+    justify-content:flex-start;
+}
+
