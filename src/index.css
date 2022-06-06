@@ -172,6 +172,8 @@ button {
     width: 100px;
     height: 40px;
     cursor: pointer;
+    background-color: #d2d0d1;
+    margin-top:10px
 }
 
 button:hover{
