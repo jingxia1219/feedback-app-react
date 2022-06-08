@@ -27,7 +27,9 @@ body{
 }
 
 header{
-    height: 70px;
+    height: 80px;
+    min-width: 670px;
+    overflow:hidden;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -71,7 +73,7 @@ header{
     justify-content: center;
     align-items: center;
     margin-right: 12px;
-    background: #d2d0d1;
+    background: #deddde;
     height: 50px;
     width: 50px;
     padding: 10px;
@@ -172,7 +174,7 @@ button {
     width: 100px;
     height: 40px;
     cursor: pointer;
-    background-color: #d2d0d1;
+    background-color: #deddde;
     margin-top:10px
 }
 
@@ -194,3 +196,30 @@ button:hover{
     justify-content:flex-start;
 }
 
+a{
+    color: white;
+    font-weight:bold ;
+
+}
+
+
+ a{
+    text-decoration: none;
+    margin-left: 25px;
+ }
+
+ .about-link{
+    right: 30px;
+    bottom: 30px;
+    position: fixed;
+ }
+a:hover{
+     color:#ff6a95;
+     cursor: pointer;
+ }
+
+ .page-links {
+     margin-top: -7px;
+     display: flex;
+     justify-content: center;
+ }

@@ -1,3 +1,6 @@
+import {Link} from 'react-router-dom';
+import AboutPageLink from './AboutPageLink';
+
 function Header(props){
     const headerSyles = {backgroundColor:props.bgColor,color:props.textColor}
     return (
@@ -6,6 +9,12 @@ function Header(props){
               <h2>
                   {props.text}
               </h2>
+                    <div className='page-links' >
+                       <Link to='/'>
+                             Home
+                         </Link>
+                        <AboutPageLink>About</AboutPageLink>
+                    </div>
           </div>
           </header>  
     )
